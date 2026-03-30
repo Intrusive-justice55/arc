@@ -1,0 +1,36 @@
+{
+  "name": "@axolotlai/arc-adapter-deepagent",
+  "version": "0.1.0",
+  "description": "DeepAgent (LangChain) middleware adapter for agent remote control",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axolotl-ai-cloud/arc.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@axolotlai/arc-protocol": "*"
+  },
+  "peerDependencies": {
+    "deepagents": ">=0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

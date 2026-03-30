@@ -1,0 +1,43 @@
+{
+  "name": "@axolotlai/arc-cli",
+  "version": "0.1.0",
+  "description": "CLI for Agent Remote Control — connect any AI agent to a relay server",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axolotl-ai-cloud/arc.git"
+  },
+  "type": "module",
+  "bin": {
+    "arc": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "prebuild": "rm -rf hermes-plugin && cp -r ../../hermes-plugin/arc-remote-control hermes-plugin || true",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@axolotlai/arc-protocol": "*",
+    "@axolotlai/arc-adapter-hermes": "*",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.7.0"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "hermes-plugin"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "arc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ARC — Agent Remote Control. Universal remote control for AI agent frameworks.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=packages/protocol && npm run build --workspace=packages/adapter-deepagent --workspace=packages/adapter-hermes --workspace=packages/adapter-openclaw --workspace=packages/cli --workspace=packages/web-client",
+    "build:protocol": "cd packages/protocol && npm run build",
+    "build:web": "cd packages/web-client && npm run build",
+    "dev:relay": "python -m relay",
+    "dev:viewer": "cd packages/web-client && npm run dev",
+    "test:protocol": "node --test packages/protocol/tests/test-*.mjs",
+    "test:relay": "python -m pytest relay/tests/ -v",
+    "test:plugin": "python -m pytest hermes-plugin/tests/ -v",
+    "test:hosted": "python -m pytest hosted/backend/tests/ -v",
+    "test:contracts": "python -m pytest tests/test_api_contracts.py -v",
+    "test:integration": "python -m pytest tests/test_hosted_integration.py -v",
+    "test:websocket": "python -m pytest tests/test_websocket_relay.py -v",
+    "prepare": "husky",
+    "lint": "eslint packages/*/src/ && ruff check relay/ hosted/backend/ tests/",
+    "test:ts": "npm run test:protocol",
+    "test:py": "npm run test:relay && npm run test:hosted && npm run test:plugin && npm run test:contracts && npm run test:integration && npm run test:websocket",
+    "test": "npm run test:ts && npm run test:py"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axolotl-ai-cloud/arc.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^10.1.0",
+    "husky": "^9.1.7"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@axolotlai/arc-adapter-openclaw",
+  "version": "0.1.0",
+  "description": "OpenClaw plugin adapter for agent remote control",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axolotl-ai-cloud/arc.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@axolotlai/arc-protocol": "*",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.7.0"
+  }
+}
