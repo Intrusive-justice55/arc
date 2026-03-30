@@ -53,7 +53,7 @@ function printUsage(): void {
     ARC_HOSTED=true            Use hosted relay (arc.axolotl.ai)
 
   Quick start:
-    curl -fsSL https://arc-beta.axolotl.ai/install.sh | sh
+    curl -fsSL https://raw.githubusercontent.com/axolotl-ai-cloud/arc/refs/heads/main/install.sh | sh
     arc setup
     arc connect
 `);

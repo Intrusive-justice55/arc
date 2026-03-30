@@ -3,7 +3,7 @@
 # Agent Remote Control — Quick Installer
 #
 # Usage:
-#   curl -fsSL https://arc-beta.axolotl.ai/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/axolotl-ai-cloud/arc/refs/heads/main/install.sh | sh
 #
 # Dev mode (install from local repo checkout):
 #   ./install.sh --local              # from repo root

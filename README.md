@@ -10,29 +10,13 @@ Universal remote control for AI agent frameworks. Connect any agent to a browser
 | DeepAgent | 🔜 Planned | — | — | `@axolotlai/arc-adapter-deepagent` |
 | OpenClaw | 🔜 Planned | — | — | `@axolotlai/arc-adapter-openclaw` |
 | Claude Code | 🔜 Planned | — | — | Skill file |
-| Any agent | 🔧 Manual | — | — | `arc connect` CLI |
 
 ## Quick Start
 
 ```bash
-# Install CLI
-curl -fsSL https://arc-beta.axolotl.ai/install.sh | sh
-
-# Configure (uses hosted beta relay — no server needed)
-arc setup
-
-# Start a remote control session
-arc connect
-```
-
-Or inside Hermes Agent, just type `/remote-control`.
-
-## Quick Start (Hermes Agent)
-
-```bash
 # Install and configure
-curl -fsSL https://arc-beta.axolotl.ai/install.sh | sh
-arc setup --hermes
+curl -fsSL https://raw.githubusercontent.com/axolotl-ai-cloud/arc/refs/heads/main/install.sh | sh
+arc setup --hermes  # uses hosted beta relay — no server needed
 
 # Start Hermes, then type /remote-control
 hermes
@@ -129,13 +113,10 @@ Open `http://localhost:8600/viewer` to access the web viewer (if web-client is b
 | **DeepAgent** (LangChain) | TypeScript middleware | `@axolotlai/arc-adapter-deepagent` |
 | **OpenClaw** | TypeScript plugin | `@axolotlai/arc-adapter-openclaw` |
 | **Claude Code** | Skill file | `/remote-control` slash command |
-| **Any agent** | CLI | `arc connect` |
-
 ## CLI Commands
 
 ```bash
 arc setup [--hermes|--self-hosted]  # Configure relay URL, token, framework
-arc connect [--json] [--quiet]     # Start a remote control session
 arc update                         # Pull, rebuild, reinstall skills
 arc install-skill                  # Install /remote-control skill
 arc status                         # Show current configuration
@@ -177,7 +158,6 @@ app = create_app(RelayConfig(
 │   ├── adapter-deepagent/     # DeepAgent adapter
 │   └── adapter-openclaw/      # OpenClaw adapter
 ├── hermes-plugin/             # Native Hermes Python plugin
-├── hosted/                    # Hosted SaaS version (see hosted/README.md)
 ├── tests/                     # Integration tests
 ├── install.sh                 # curl | sh installer
 └── docker-compose.yml         # Local dev
@@ -194,7 +174,7 @@ npm test                       # All tests
 ## Roadmap
 
 - [x] Per-session authentication
-- [x] CLI with `arc setup` / `arc connect` / `/remote-control`
+- [x] CLI with `arc setup` / `/remote-control`
 - [x] Tool approval/deny from viewer
 - [x] Native Hermes Agent plugin with lifecycle hooks
 - [x] Beta relay with prefix-based tokens
