@@ -201,7 +201,6 @@ Python tests:
 - `hermes-plugin/tests/test_reconnect.py` — Plugin reconnect loop (6 tests)
 - `hermes-plugin/tests/test_e2e.py` — Plugin E2E encryption (12 tests)
 - `tests/test_api_contracts.py` — Protocol interface contract enforcement
-- `tests/test_hosted_integration.py` — Hosted providers against OSS relay
 - `tests/test_websocket_relay.py` — End-to-end WebSocket relay integration
 
 TypeScript tests:
