@@ -49,6 +49,7 @@ from fastapi import FastAPI, Header, Request, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.websockets import WebSocketState
 
 from relay.defaults import (
     DefaultSessionPolicy,
@@ -407,6 +408,10 @@ def create_app(config: RelayConfig | None = None) -> FastAPI:
                         # Only allow takeover by the same user (or in OSS mode where user_id is None)
                         if existing.user_id is not None and existing.user_id != auth_result.user_id:
                             await ws.send_json({"error": "session owned by another user"})
+                            continue
+                        # Reject if the existing agent WS is still connected (true duplicate, not a reconnect)
+                        if existing.agent_ws.client_state == WebSocketState.CONNECTED:
+                            await ws.send_json({"error": f"session '{sid}' already exists"})
                             continue
                         # Take over: close old agent WS, reuse session secret, keep viewers
                         try:
